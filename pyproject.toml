@@ -1,0 +1,42 @@
+[project]
+name = "aivalon"
+version = "0.1.0"
+description = "AI-driven implementation of the Avalon board game with LLM-powered players"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.117.1",
+    "httpx>=0.28.1",
+    "openai>=1.109.1",
+    "orjson>=3.11.3",
+    "pydantic>=2.11.9",
+    "python-dotenv>=1.1.1",
+    "rich>=13.0.0",
+    "structlog>=25.4.0",
+    "typer>=0.19.2",
+    "uvicorn>=0.37.0",
+]
+
+[project.entry-points."console_scripts"]
+aivalon = "aivalon.services.cli:app"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "pytest>=8.4.2",
+    "ruff>=0.13.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

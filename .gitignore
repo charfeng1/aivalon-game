@@ -1,0 +1,32 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local secrets and configs
+.env
+config/config.local.json
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+
+# Frontend build and lock files
+frontend/dist/
+frontend/.vite/
+frontend/package-lock.json
+
+# TypeScript compiled JS files in src (should only be in dist/)
+frontend/src/**/*.js
+frontend/src/**/*.jsx
+
+.vscodecounter/
+
+runs/
+debug_logs/
